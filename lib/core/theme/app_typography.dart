@@ -53,7 +53,7 @@ TextStyle subTitle = TextStyle(
 
 TextStyle caption1 = TextStyle(
   color: AppColors.neutral[600],
-  fontSize: 12,
+  fontSize: 14,
   height: 14 / 12,
   fontWeight: FontWeight.w400,
 );

@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 
-class HttpProvider {
+class HttpProviderDio {
   final Dio http;
 
-  HttpProvider({
+  HttpProviderDio({
     required String baseUrl,
     Duration connectTimeout = const Duration(seconds: 30),
     Duration receiveTimeout = const Duration(seconds: 30),
