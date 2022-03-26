@@ -5,19 +5,18 @@ import 'app_colors.dart';
 class AppIcons {
   static const favorite = Icons.star;
   static const favoriteOutlined = Icons.star_border_outlined;
+  static const settings = Icons.format_list_bulleted_sharp;
 }
 
-extension AppIconsExt on String {
+extension AppIconsExt on IconData {
   AppIcon icon({
-    String? icon,
-    BoxFit? fit,
+    IconData? icon,
     Color? color,
     double? size,
     Function()? onTap,
   }) {
     return AppIcon(
       icon: this,
-      fit: fit,
       color: color,
       size: size,
       onTap: onTap,
@@ -26,7 +25,7 @@ extension AppIconsExt on String {
 }
 
 class AppIcon extends StatelessWidget {
-  final String? icon;
+  final IconData? icon;
   final BoxFit? fit;
   final Color? color;
   final double? size;
@@ -46,7 +45,7 @@ class AppIcon extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Icon(
-        AppIcons.favorite,
+        icon ?? AppIcons.favorite,
         size: size ?? 24,
         color: color ?? AppColors.icons,
       ),
