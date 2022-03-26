@@ -8,9 +8,10 @@ void setBuildContext(BuildContext context) {
 }
 
 TextStyle appBarTitle = const TextStyle(
-  fontSize: 17,
+  fontSize: 20,
   height: 22 / 17,
   fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.w600,
   color: AppColors.primary,
   letterSpacing: -0.41,
 );

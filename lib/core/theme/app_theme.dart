@@ -8,10 +8,11 @@ class AppTheme {
   final ThemeData theme = ThemeData(
     primaryColor: AppColors.primary,
     backgroundColor: AppColors.neutral,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
+      titleTextStyle: appBarTitle,
       elevation: 0,
       backgroundColor: AppColors.neutral,
-      iconTheme: IconThemeData(color: AppColors.icons),
+      iconTheme: const IconThemeData(color: AppColors.icons),
       centerTitle: true,
     ),
     scaffoldBackgroundColor: AppColors.neutral,
