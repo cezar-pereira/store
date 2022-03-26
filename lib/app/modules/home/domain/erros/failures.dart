@@ -14,3 +14,18 @@ class FetchCategoriesException extends Failure {
           errorMessage: errorMessage,
         );
 }
+
+class FetchProductException extends Failure {
+  FetchProductException.empty();
+  FetchProductException(
+    StackTrace stackTrace,
+    String label,
+    dynamic exception,
+    String errorMessage,
+  ) : super(
+          stackTrace: stackTrace,
+          label: label,
+          exception: exception,
+          errorMessage: errorMessage,
+        );
+}
