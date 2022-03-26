@@ -45,7 +45,6 @@ TextStyle title = const TextStyle(
 
 TextStyle subTitle = TextStyle(
   fontSize: 14,
-  height: 24 / 16,
   color: AppColors.primary[300],
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w400,

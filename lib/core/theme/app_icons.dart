@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 class AppIcons {
-  static const favorite = Icons.star;
-  static const favoriteOutlined = Icons.star_border_outlined;
+  static const favorite = Icons.bookmark_border_sharp;
+  static const favoriteAdded = Icons.bookmark_sharp;
   static const settings = Icons.format_list_bulleted_sharp;
 }
 
