@@ -37,6 +37,11 @@ https://user-images.githubusercontent.com/48159342/160264175-5d21f45a-e0ca-48d4-
 
 ---
 
+## ⬇️ Download APK
+           
+[Download](https://github.com/cezar-pereira/store/raw/master/apk/app-armeabi-v7a-release.apk).
+
+---
 
 ## ⬇️ To run
 1. Clonar repositório
