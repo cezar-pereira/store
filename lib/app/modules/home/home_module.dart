@@ -3,6 +3,7 @@ import 'package:store/app/modules/home/domain/usecases/fetch_categories_usecase.
 import 'package:store/app/modules/home/domain/usecases/fetch_products_from_category_usecase.dart';
 import 'package:store/app/modules/home/domain/usecases/fetch_products_usecase.dart';
 import 'package:store/app/modules/home/infra/repositories/category_repository.dart';
+import '../details_product/product_details_module.dart';
 import 'domain/repositories/category_repository_interface.dart';
 import 'domain/repositories/product_repository_interface.dart';
 import 'external/category_datasource_dio.dart';
@@ -45,5 +46,6 @@ class HomeModule extends Module {
   @override
   final List<ModularRoute> routes = [
     ChildRoute(Modular.initialRoute, child: (_, args) => const HomePage()),
+    ModuleRoute('/product-details', module: ProductDetailsModuleModule())
   ];
 }

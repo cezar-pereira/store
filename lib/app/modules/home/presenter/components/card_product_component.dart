@@ -36,17 +36,22 @@ class _CardProductComponentState extends State<CardProductComponent> {
               Stack(
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Modular.to.pushNamed('/product-details',
+                          arguments: widget.product);
+                    },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 8.0),
-                      child: Container(
-                        height: 120,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: NetworkImage(widget.product.image),
-                              fit: BoxFit.scaleDown),
-                        ),
-                      ),
+                      child: Hero(
+                          tag: widget.product.image,
+                          child: Container(
+                            height: 120,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(widget.product.image),
+                                  fit: BoxFit.scaleDown),
+                            ),
+                          )),
                     ),
                   ),
                   _alertPercent(),
