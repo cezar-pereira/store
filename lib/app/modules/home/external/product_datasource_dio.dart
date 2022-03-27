@@ -37,8 +37,28 @@ class ProductDatasource extends HttpProviderDio
 
   @override
   Future<List<ProductModel>> fetchProductsFromCategory(
-      {required CategoryEntity category}) {
-    // TODO: implement fetchProductsFromCategory
-    throw UnimplementedError();
+      {required CategoryEntity category}) async {
+    try {
+      final result = await http.get('products/category/${category.name}');
+      return result.data
+          .map<ProductModel>((json) => ProductModel.fromJson(json))
+          .toList();
+    } on DioError catch (exception, stackTrace) {
+      if (exception.type == DioErrorType.response) {
+        throw FetchProductException(
+            stackTrace,
+            'ProductDatasource-fetchProductsFromCategory',
+            exception,
+            exception.response!.statusMessage.toString());
+      } else {
+        throw ConnectionError();
+      }
+    } on Exception catch (exception, stackTrace) {
+      throw FetchProductException(
+          stackTrace,
+          'ProductDatasource-fetchProductsFromCategory',
+          exception,
+          exception.toString());
+    }
   }
 }

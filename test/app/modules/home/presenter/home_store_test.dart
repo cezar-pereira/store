@@ -3,6 +3,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:store/app/modules/home/domain/repositories/category_repository_interface.dart';
 import 'package:store/app/modules/home/domain/repositories/product_repository_interface.dart';
 import 'package:store/app/modules/home/domain/usecases/fetch_categories_usecase.dart';
+import 'package:store/app/modules/home/domain/usecases/fetch_products_from_category_usecase.dart';
 import 'package:store/app/modules/home/domain/usecases/fetch_products_usecase.dart';
 import 'package:store/app/modules/home/infra/models/product_model.dart';
 import 'package:store/app/modules/home/presenter/home_store.dart';
@@ -17,6 +18,8 @@ void main() {
   late HomeStore store;
   late FetchCategoriesUsecaseInterface fetchCategoriesUsecase;
   late FetchProductsUsecaseInterface fetchProductsUsecase;
+  late FetchProductsFromCategoryUsecaseInterface
+      fetchProductsFromCategoryUsecase;
 
   setUp(() {
     fetchCategoriesUsecase =
@@ -24,7 +27,11 @@ void main() {
     fetchProductsUsecase =
         FetchProductsUsecase(repository: MockProductRepository());
 
+    fetchProductsFromCategoryUsecase =
+        FetchProductsFromCategoryUsecase(repository: MockProductRepository());
+
     store = HomeStore(
+        fetchProductsFromCategoryUsecase: fetchProductsFromCategoryUsecase,
         fetchCategoriesUsecase: fetchCategoriesUsecase,
         fetchProductsUsecase: fetchProductsUsecase);
   });

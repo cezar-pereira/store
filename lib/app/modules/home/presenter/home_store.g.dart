@@ -69,12 +69,36 @@ mixin _$HomeStore on HomeStoreBase, Store {
     });
   }
 
+  final _$categorySelectedAtom = Atom(name: 'HomeStoreBase.categorySelected');
+
+  @override
+  CategoryEntity? get categorySelected {
+    _$categorySelectedAtom.reportRead();
+    return super.categorySelected;
+  }
+
+  @override
+  set categorySelected(CategoryEntity? value) {
+    _$categorySelectedAtom.reportWrite(value, super.categorySelected, () {
+      super.categorySelected = value;
+    });
+  }
+
   final _$fetchCategoriesAsyncAction =
       AsyncAction('HomeStoreBase.fetchCategories');
 
   @override
   Future<void> fetchCategories() {
     return _$fetchCategoriesAsyncAction.run(() => super.fetchCategories());
+  }
+
+  final _$fetchProductsFromCategoryAsyncAction =
+      AsyncAction('HomeStoreBase.fetchProductsFromCategory');
+
+  @override
+  Future<void> fetchProductsFromCategory() {
+    return _$fetchProductsFromCategoryAsyncAction
+        .run(() => super.fetchProductsFromCategory());
   }
 
   final _$fetchProductsAsyncAction = AsyncAction('HomeStoreBase.fetchProducts');
@@ -97,7 +121,8 @@ mixin _$HomeStore on HomeStoreBase, Store {
 listCategories: ${listCategories},
 productHomeState: ${productHomeState},
 listFavorites: ${listFavorites},
-cart: ${cart}
+cart: ${cart},
+categorySelected: ${categorySelected}
     ''';
   }
 }

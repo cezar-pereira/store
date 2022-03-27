@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:store/app/modules/home/presenter/components/card_product_component.dart';
+import 'package:store/app/modules/home/presenter/components/cart_count_component.dart';
 import 'package:store/core/components/app_divider.dart';
-import 'package:store/core/theme/app_icons.dart';
 
 import 'components/list_categories_component.dart';
 import 'home_store.dart';
@@ -31,7 +31,7 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 8.0),
-            child: AppIcon(icon: AppIcons.settings),
+            child: Center(child: CartCountComponent()),
           )
         ],
         title: Text(widget.title),
@@ -84,7 +84,10 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: ListCategoriesComponent(
             list: controller.listCategories,
-            onTap: () {},
+            onChanged: (value) {
+              controller.categorySelected = value;
+              store.fetchProductsFromCategory();
+            },
           ),
         ),
         const AppDivider(),

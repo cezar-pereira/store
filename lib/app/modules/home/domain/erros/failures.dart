@@ -29,3 +29,18 @@ class FetchProductException extends Failure {
           errorMessage: errorMessage,
         );
 }
+
+class FetchProductsFromCategoryException extends Failure {
+  FetchProductsFromCategoryException.empty();
+  FetchProductsFromCategoryException(
+    StackTrace stackTrace,
+    String label,
+    dynamic exception,
+    String errorMessage,
+  ) : super(
+          stackTrace: stackTrace,
+          label: label,
+          exception: exception,
+          errorMessage: errorMessage,
+        );
+}

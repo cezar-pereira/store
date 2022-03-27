@@ -5,10 +5,10 @@ import '../../domain/entities/category_entity.dart';
 
 class ListCategoriesComponent extends StatefulWidget {
   const ListCategoriesComponent(
-      {Key? key, required this.list, required this.onTap})
+      {Key? key, required this.list, required this.onChanged})
       : super(key: key);
   final List<CategoryEntity> list;
-  final VoidCallback onTap;
+  final ValueChanged onChanged;
 
   @override
   State<ListCategoriesComponent> createState() => _ListCategoriesState();
@@ -43,7 +43,8 @@ class _ListCategoriesState extends State<ListCategoriesComponent> {
             onTap: () {
               setState(() {
                 selected = widget.list[index];
-                widget.onTap;
+
+                widget.onChanged(selected);
               });
             },
             child: Center(

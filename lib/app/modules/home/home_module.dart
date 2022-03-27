@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:store/app/modules/home/domain/usecases/fetch_categories_usecase.dart';
+import 'package:store/app/modules/home/domain/usecases/fetch_products_from_category_usecase.dart';
 import 'package:store/app/modules/home/domain/usecases/fetch_products_usecase.dart';
 import 'package:store/app/modules/home/infra/repositories/category_repository.dart';
 import 'domain/repositories/category_repository_interface.dart';
@@ -29,10 +30,16 @@ class HomeModule extends Module {
         repository: i.get<CategoryRepositoryInterface>())),
     Bind.lazySingleton((i) =>
         FetchProductsUsecase(repository: i.get<ProductRepositoryInterface>())),
+    Bind.lazySingleton((i) => FetchProductsFromCategoryUsecase(
+        repository: i.get<ProductRepositoryInterface>())),
     /*** STORE  ***/
-    Bind.lazySingleton((i) => HomeStore(
-        fetchCategoriesUsecase: i.get<FetchCategoriesUsecaseInterface>(),
-        fetchProductsUsecase: i.get<FetchProductsUsecaseInterface>())),
+    Bind.lazySingleton(
+      (i) => HomeStore(
+          fetchProductsFromCategoryUsecase:
+              i.get<FetchProductsFromCategoryUsecaseInterface>(),
+          fetchCategoriesUsecase: i.get<FetchCategoriesUsecaseInterface>(),
+          fetchProductsUsecase: i.get<FetchProductsUsecaseInterface>()),
+    ),
   ];
 
   @override

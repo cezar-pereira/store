@@ -6,6 +6,7 @@ class AppIcons {
   static const favorite = Icons.bookmark_border_sharp;
   static const favoriteAdded = Icons.bookmark_sharp;
   static const settings = Icons.format_list_bulleted_sharp;
+  static const cart = Icons.shopping_bag_sharp;
 }
 
 extension AppIconsExt on IconData {
