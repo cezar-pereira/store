@@ -1,16 +1,46 @@
-# store
+<h1 align="center">Store</h1>
 
-A new Flutter project.
+---
 
-## Getting Started
+https://user-images.githubusercontent.com/48159342/160264175-5d21f45a-e0ca-48d4-ac60-e5014dba4acc.mp4
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📘 Mockup
+![image](https://user-images.githubusercontent.com/48159342/160264145-95c6b17e-2c37-4cf2-a0a2-a4f573c42416.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+[LINK](https://dribbble.com/shots/14133325-Zummedy-App-Store).
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+### Mobx (Gerencia de estado)
+### Modular (Controle de rota e injeção de dependência)
+### Dartz (Retorno duplo)
+### Mocktail (Testes unitários)
+### Dio (Requisições HTTP)
+
+## ⚙️ Funcionalidades
+
+- Buscar produtos
+- Buscar produtos por categoria
+- Buscar categorias
+---
+
+
+## 📘 Packages
+
+### Mobx (Gerencia de estado)
+### Modular (Controle de rota e injeção de dependência)
+### Dartz (Retorno duplo)
+### Mocktail (Testes unitários)
+### Dio (Requisições HTTP)
+
+---
+
+
+## ⬇️ To run
+1. Clonar repositório
+2. Rodar o comando: flutter pub get
+3. Conectar um dispositivo android/ios e rodar: flutter run
+---
+
