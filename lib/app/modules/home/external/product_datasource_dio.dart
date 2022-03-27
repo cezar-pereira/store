@@ -25,7 +25,7 @@ class ProductDatasource extends HttpProviderDio
             stackTrace,
             'ProductDatasource-fetchProducts',
             exception,
-            exception.response!.data['status_message']);
+            exception.response!.statusMessage.toString());
       } else {
         throw ConnectionError();
       }

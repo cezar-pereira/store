@@ -33,7 +33,7 @@ class _ListCategoriesState extends State<ListCategoriesComponent> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 30,
+      height: 40,
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,

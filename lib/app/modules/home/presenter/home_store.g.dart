@@ -24,6 +24,51 @@ mixin _$HomeStore on HomeStoreBase, Store {
     });
   }
 
+  final _$productHomeStateAtom = Atom(name: 'HomeStoreBase.productHomeState');
+
+  @override
+  ProductHomeState get productHomeState {
+    _$productHomeStateAtom.reportRead();
+    return super.productHomeState;
+  }
+
+  @override
+  set productHomeState(ProductHomeState value) {
+    _$productHomeStateAtom.reportWrite(value, super.productHomeState, () {
+      super.productHomeState = value;
+    });
+  }
+
+  final _$listFavoritesAtom = Atom(name: 'HomeStoreBase.listFavorites');
+
+  @override
+  ObservableList<ProductEntity> get listFavorites {
+    _$listFavoritesAtom.reportRead();
+    return super.listFavorites;
+  }
+
+  @override
+  set listFavorites(ObservableList<ProductEntity> value) {
+    _$listFavoritesAtom.reportWrite(value, super.listFavorites, () {
+      super.listFavorites = value;
+    });
+  }
+
+  final _$cartAtom = Atom(name: 'HomeStoreBase.cart');
+
+  @override
+  List<ProductEntity> get cart {
+    _$cartAtom.reportRead();
+    return super.cart;
+  }
+
+  @override
+  set cart(List<ProductEntity> value) {
+    _$cartAtom.reportWrite(value, super.cart, () {
+      super.cart = value;
+    });
+  }
+
   final _$fetchCategoriesAsyncAction =
       AsyncAction('HomeStoreBase.fetchCategories');
 
@@ -32,10 +77,27 @@ mixin _$HomeStore on HomeStoreBase, Store {
     return _$fetchCategoriesAsyncAction.run(() => super.fetchCategories());
   }
 
+  final _$fetchProductsAsyncAction = AsyncAction('HomeStoreBase.fetchProducts');
+
+  @override
+  Future<void> fetchProducts() {
+    return _$fetchProductsAsyncAction.run(() => super.fetchProducts());
+  }
+
+  final _$loadAsyncAction = AsyncAction('HomeStoreBase.load');
+
+  @override
+  Future<void> load() {
+    return _$loadAsyncAction.run(() => super.load());
+  }
+
   @override
   String toString() {
     return '''
-listCategories: ${listCategories}
+listCategories: ${listCategories},
+productHomeState: ${productHomeState},
+listFavorites: ${listFavorites},
+cart: ${cart}
     ''';
   }
 }
